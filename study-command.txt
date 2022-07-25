@@ -1,0 +1,6 @@
+1.  gcc main.cpp
+2.  gcc main.cpp -o hello
+3.  gcc main.cpp add.cpp -o hello
+4.  gcc -c main.cpp -Wall
+	gcc -c add.cpp -Wall
+	gcc main.o add.o -o hello
