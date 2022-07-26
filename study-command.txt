@@ -1,5 +1,9 @@
-1.	 
-2.	
-3.
-4.
-5.
+readelf -d ./hello | head -20
+export LIBRARY_PATH= ; echo $LIBRARY_PATH
+
+g++ add.o sub.o -shared -o libmath.so
+g++ main.o libmath/src/libmath.so -o hello
+g++ main.o -Llibmath/src/ -lmath -o hello
+sudo vim /etc/ld.so.conf.d/libmath.conf
+cat /etc/ld.so.conf.d/libmath.conf
+export LD_LIBRARY_PATH=~/Programming/gcc-tutorial/libmath/src/
